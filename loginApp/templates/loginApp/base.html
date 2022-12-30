@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Django Web Application</title>
+    
+    {% load bootstrap5 %}
+
+    {% bootstrap_css %}
+
+    {% bootstrap_javascript %}
+
+    {% bootstrap_messages %}
+</head>
+
+<body style="background-color: #3E4D83;">
+    <div class="b-example-divider"></div>
+
+    <nav class="py-2 border-bottom">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav me-auto">
+                <li class="nav-item"><a href={% url 'home' %} class="nav-link link-dark px-2 active text-white"
+                        aria-current="page">Home</a></li>
+                <li class="nav-item"><a href={% url 'products' %} class="nav-link link-dark px-2 text-white"">Products</a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href={% url 'exit' %} class="nav-link link-dark px-2 text-white"">Exit</a></li>
+                {% else %}
+                <li class="nav-item"><a href={% url 'login' %} class="nav-link link-dark px-2 text-white"">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+
+</html>

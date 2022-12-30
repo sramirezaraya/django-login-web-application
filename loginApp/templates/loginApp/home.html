@@ -1,0 +1,23 @@
+{% extends 'loginApp/base.html' %}
+
+{% block content %}
+
+<h4 class="mx-3 my-3 text-white text-center">Django Login Web application</h4>
+
+<div>
+    <h3 class="mx-5 my-5 text-secondary"><strong>Welcome to our community</strong></h3>
+    {% load static %}
+    <img class="w-50" src="{% static 'loginApp/image.png' %}" alt="" style="filter:brightness(1.1); mix-blend-mode: multiply;">
+</div>
+
+
+
+{% if request.user.is_authenticated %}
+<br>
+<h3>
+    Welcome, {{user.username | upper }}
+</h3>
+{% endif %}
+
+
+{% endblock %}

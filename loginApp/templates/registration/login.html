@@ -1,0 +1,31 @@
+{% extends 'loginApp/base.html' %}
+
+{% block content %}
+
+<h5 class="my-5 text-light" style="text-align: center;">Log in to your account</h5>
+
+<br>
+<div class="d-flex justify-content-center">
+    <form action="" method="post" class="form-signin mx-3 bg-white px-5 py-3">
+        {% csrf_token %}
+    
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="text-light">Email address</label>
+            <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="width: 20rem;">
+          </div>
+          
+    
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="text-light">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="width: 20rem;">
+        </div>
+        <br>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+    </form>
+    
+</div>
+
+
+{% endblock %}
